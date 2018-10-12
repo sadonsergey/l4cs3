@@ -13,9 +13,9 @@ class CashierServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../../views', 'cashier');
+        $this->getAppViewPath(__DIR__.'/../../views', 'cashier');
 
-        $this->publishes([
+        $this->guessPackagePath([
             __DIR__.'/../../views' => base_path('resources/views/vendor/cashier'),
         ]);
     }
